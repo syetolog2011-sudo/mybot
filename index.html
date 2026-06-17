@@ -18,13 +18,11 @@
             </div>
             <div class="balance-badge token-gold">
                 <span class="icon">🪙</span>
-                <span id="balance-coins">0.00</span>
+                <span id="balance-coins">12500</span>
             </div>
             <button class="deposit-btn">+</button>
         </div>
-        <div class="profile-avatar">
-            <span class="avatar-emoji">🦝</span>
-        </div>
+        <div class="profile-avatar"><span class="avatar-emoji">🦝</span></div>
     </header>
 
     <div class="content-wrapper">
@@ -39,13 +37,12 @@
                         <div class="feed-item">🎁</div>
                     </div>
                 </div>
-
                 <div class="section-title">
                     <h3>Промо</h3>
-                    <span class="badge-count">2</span>
+                    <span class="badge-count">1</span>
                 </div>
                 <div class="cases-grid">
-                    <div class="case-card orange-case" onclick="openCaseMenu('BAD', 14, '📦')">
+                    <div class="case-card orange-case" onclick="openCaseMenu('BAD', 14)">
                         <span class="case-counter">🎫 11</span>
                         <div class="case-img">📦</div>
                         <h4>BAD</h4>
@@ -57,136 +54,52 @@
             <div id="case-inner-view" class="hidden">
                 <button class="back-btn" onclick="closeCaseMenu()">❮ Назад</button>
                 
-                <div class="case-preview-container">
-                    <h2 id="inner-case-title">BAD</h2>
-                    <div class="case-big-img">📦</div>
+                <h2 id="inner-case-title" class="tab-title-center">BAD</h2>
+
+                <div class="roulette-wrapper">
+                    <div class="roulette-marker"></div>
+                    <div id="roulette-container-box" class="roulette-container-box">
+                        </div>
                 </div>
 
                 <div class="case-controls">
-                    <button class="btn-main-open">Открыть <span id="case-price-tag">💎 14</span></button>
-                    <button class="btn-fast-open">Быстрое открытие</button>
+                    <button id="fast-open-btn" class="btn-fast-open">Быстрое открытие <span id="case-price-tag">💎 14</span></button>
                     
                     <div class="multiplier-row">
-                        <button class="mult-btn active" onclick="setMultiplier(1, this)">×1</button>
-                        <button class="mult-btn" onclick="setMultiplier(2, this)">×2</button>
-                        <button class="mult-btn" onclick="setMultiplier(3, this)">×3</button>
-                        <button class="mult-btn" onclick="setMultiplier(4, this)">×4</button>
-                        <button class="mult-btn" onclick="setMultiplier(5, this)">×5</button>
+                        <button class="mult-btn active" onclick="setCount(1, this)">×1</button>
+                        <button class="mult-btn" onclick="setCount(2, this)">×2</button>
+                        <button class="mult-btn" onclick="setCount(3, this)">×3</button>
                     </div>
                 </div>
 
                 <div class="section-title">
-                    <h3>Содержимое</h3>
-                    <span class="badge-count">24</span>
+                    <h3>Содержимое кейса</h3>
+                    <span class="badge-count">5</span>
                 </div>
                 <div class="inventory-grid content-grid">
-                    <div class="inv-item rarity-epic">👜</div>
-                    <div class="inv-item rarity-rare">💪</div>
-                    <div class="inv-item rarity-common">🍒</div>
+                    <div class="inv-item rarity-epic">👜<span class="price">Эпик</span></div>
+                    <div class="inv-item rarity-rare">💪<span class="price">Редкое</span></div>
+                    <div class="inv-item rarity-common">🍒<span class="price">Обычное</span></div>
+                    <div class="inv-item rarity-epic">💎<span class="price">Эпик</span></div>
+                    <div class="inv-item rarity-rare">🚀<span class="price">Редкое</span></div>
                 </div>
             </div>
         </section>
 
-        <section id="tab-upgrade" class="tab-content hidden">
-            <div class="upgrade-container">
-                <div class="upgrade-circle">
-                    <span class="arrow-up">▲</span>
-                    <div class="chance-text">0%</div>
-                    <div class="chance-sub">ШАНС</div>
-                </div>
-                <button class="btn-main-open" style="width:100%;">Начать апгрейд</button>
-            </div>
-        </section>
-
-        <section id="tab-slots" class="tab-content hidden">
-            <div class="slots-machine">
-                <div class="slot-reel"><div class="slot-icon">💎</div></div>
-                <div class="slot-reel"><div class="slot-icon">🚀</div></div>
-                <div class="slot-reel"><div class="slot-icon">🍯</div></div>
-            </div>
-            <button class="btn-main-open" style="width:100%; margin-top:20px;">Крутить</button>
-        </section>
-
-        <section id="tab-craft" class="tab-content hidden">
-            <h2 class="tab-title-center">Крафт</h2>
-            
-            <div class="craft-slots-grid">
-                <div class="craft-cell font-number">1</div>
-                <div class="craft-cell font-number">2</div>
-                <div class="craft-cell font-number">3</div>
-                <div class="craft-cell font-number">4</div>
-                <div class="craft-cell font-number">5</div>
-                <div class="craft-cell font-number">6</div>
-                <div class="craft-cell font-number">7</div>
-                <div class="craft-cell font-number">8</div>
-                <div class="craft-cell font-number">9</div>
-                <div class="craft-cell font-number">10</div>
-            </div>
-
-            <div class="craft-info-bar">
-                <div class="info-block">
-                    <span class="info-label">СТОИМОСТЬ КРАФТА</span>
-                    <span class="info-value">💎 0,00</span>
-                </div>
-                <div class="info-line-divider"></div>
-                <div class="info-block">
-                    <span class="info-label">СТОИМОСТЬ ПОДАРКА</span>
-                    <span class="info-value text-gold">💎 0,00 — 💎 0,00</span>
-                </div>
-            </div>
-
-            <div class="craft-buttons">
-                <button class="btn-main-open" style="width: 100%;">Создать крафт</button>
-                <button class="btn-clear-craft">Очистить</button>
-            </div>
-
-            <div class="inventory-section-craft">
-                <div class="inv-craft-header">
-                    <h4>Ваш инвентарь</h4>
-                    <span class="count-label">0 подарков</span>
-                </div>
-                <div class="empty-inventory-placeholder">
-                    В инвентаре нет подарков
-                </div>
-            </div>
-        </section>
-
-        <section id="tab-profile" class="tab-content hidden">
-            <div class="profile-header-card">
-                <h3>Профиль</h3>
-                <div class="stats-mini-grid">
-                    <div class="stat-box"><h5>Кейсы</h5><p>0</p></div>
-                    <div class="stat-box"><h5>Апгрейды</h5><p>0</p></div>
-                    <div class="stat-box"><h5>Крафты</h5><p>0</p></div>
-                </div>
-            </div>
-        </section>
+        <section id="tab-upgrade" class="tab-content hidden"><h2 class="tab-title-center">Апгрейд (В разработке)</h2></section>
+        <section id="tab-slots" class="tab-content hidden"><h2 class="tab-title-center">Слоты (В разработке)</h2></section>
+        <section id="tab-craft" class="tab-content hidden"><h2 class="tab-title-center">Крафт (В разработке)</h2></section>
+        <section id="tab-profile" class="tab-content hidden"><h2 class="tab-title-center">Профиль (В разработке)</h2></section>
 
     </div>
 
     <nav class="bottom-nav">
-        <button class="nav-item active" data-tab="tab-cases">
-            <span class="nav-icon">🎁</span>
-            <span class="nav-text">Кейсы</span>
-        </button>
-        <button class="nav-item" data-tab="tab-upgrade">
-            <span class="nav-icon">📈</span>
-            <span class="nav-text">Апгрейд</span>
-        </button>
-        <button class="nav-item" data-tab="tab-slots">
-            <span class="nav-icon">🎰</span>
-            <span class="nav-text">Слоты</span>
-        </button>
-        <button class="nav-item" data-tab="tab-craft">
-            <span class="nav-icon">🛠</span>
-            <span class="nav-text">Крафт</span>
-        </button>
-        <button class="nav-item" data-tab="tab-profile">
-            <span class="nav-icon">👤</span>
-            <span class="nav-text">Профиль</span>
-        </button>
+        <button class="nav-item active" data-tab="tab-cases"><span class="nav-icon">🎁</span><span class="nav-text">Кейсы</span></button>
+        <button class="nav-item" data-tab="tab-upgrade"><span class="nav-icon">📈</span><span class="nav-text">Апгрейд</span></button>
+        <button class="nav-item" data-tab="tab-slots"><span class="nav-icon">🎰</span><span class="nav-text">Слоты</span></button>
+        <button class="nav-item" data-tab="tab-craft"><span class="nav-icon">🛠</span><span class="nav-text">Крафт</span></button>
+        <button class="nav-item" data-tab="tab-profile"><span class="nav-icon">👤</span><span class="nav-text">Профиль</span></button>
     </nav>
 
-    <script src="app.js"></script>
 </body>
 </html>
