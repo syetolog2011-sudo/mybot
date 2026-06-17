@@ -1,0 +1,273 @@
+:root {
+    --bg-dark: #090b10;
+    --bg-card: #131722;
+    --border-color: #1e2538;
+    --text-main: #ffffff;
+    --text-muted: #626c85;
+    --accent-blue: #1c5fc3;
+    --accent-gold: #e0a926;
+    --rarity-common: #4b5563;
+    --rarity-rare: #10b981;
+    --rarity-epic: #8b5cf6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.hidden { display: none !important; }
+
+/* ХЕДЕР */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #0d111a;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.wallet-container {
+    display: flex;
+    align-items: center;
+    background: #07090e;
+    border: 1px solid var(--border-color);
+    padding: 4px 12px;
+    border-radius: 24px;
+    gap: 12px;
+}
+
+.balance-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.deposit-btn {
+    background: var(--accent-blue);
+    border: none;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.profile-avatar {
+    font-size: 1.5rem;
+    background: var(--bg-card);
+    padding: 4px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+/* КОНТЕНТ ВРАППЕР */
+.content-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    padding-bottom: 90px;
+}
+
+/* ЛЕНТА LIVE */
+.live-feed {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(19, 23, 34, 0.6);
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.live-indicator {
+    color: #ff4757;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.feed-items {
+    display: flex;
+    gap: 8px;
+}
+
+.feed-item {
+    background: var(--bg-card);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+/* КЕЙСЫ ГРИД */
+.cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.case-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.case-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+}
+
+.case-img {
+    font-size: 3rem;
+    margin: 12px 0;
+}
+
+.btn-case-action {
+    background: rgba(224, 169, 38, 0.1);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* СЛОТЫ */
+.slots-machine {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background: #07090e;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.slot-reel {
+    background: var(--bg-card);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.slot-icon { font-size: 1.8rem; margin: 8px 0; }
+
+.bet-section { margin-top: 16px; text-align: center; }
+.bet-selector { display: flex; gap: 8px; justify-content: center; margin-bottom: 12px; }
+.bet-opt { background: var(--bg-card); border: 1px solid var(--border-color); color: white; padding: 8px 12px; border-radius: 8px; }
+.bet-opt.active { border-color: var(--accent-gold); background: rgba(224, 169, 38, 0.1); }
+.btn-spin-slots { background: var(--accent-blue); color: white; border: none; width: 100%; padding: 14px; border-radius: 12px; font-size: 1rem; font-weight: bold; }
+
+/* КРАФТ */
+.craft-container { text-align: center; }
+.craft-area { background: var(--bg-card); border: 2px dashed var(--border-color); border-radius: 16px; padding: 40px; margin-bottom: 16px; }
+.craft-hex { font-size: 4rem; color: var(--accent-blue); }
+.craft-grid { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+.craft-slot-empty { width: 50px; height: 50px; background: rgba(0,0,0,0.3); border: 1px dashed var(--border-color); display: flex; justify-content: center; align-items: center; border-radius: 8px; color: var(--text-muted); }
+
+/* ПРОФИЛЬ (Точно как на 4 скрине) */
+.profile-header-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.profile-main-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.profile-big-avatar {
+    font-size: 2.5rem;
+    background: #1c2333;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.stats-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.stat-box { background: #0d111a; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); }
+.stat-box h5 { margin: 0; color: var(--text-muted); font-size: 0.75rem; }
+.stat-box p { margin: 4px 0 0 0; font-weight: bold; font-size: 0.95rem; }
+
+.inventory-section { margin-top: 20px; }
+.inventory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.inv-item { background: var(--bg-card); border-radius: 10px; padding: 12px 4px; text-align: center; font-size: 1.5rem; position: relative; border-bottom: 3px solid #fff; }
+.inv-item .price { display: block; font-size: 0.7rem; color: var(--text-muted); margin-top: 4px; }
+.inv-item.rarity-common { border-bottom-color: var(--rarity-common); }
+.inv-item.rarity-rare { border-bottom-color: var(--rarity-rare); }
+.inv-item.rarity-epic { border-bottom-color: var(--rarity-epic); }
+
+/* НИЖНИЙ НАВИГАТОР НА 5 КНОПОК */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #0d111a;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    gap: 4px;
+    flex: 1;
+}
+
+.nav-item.active {
+    color: #4facfe;
+}
