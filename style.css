@@ -34,14 +34,11 @@ body {
     padding: 12px 16px;
     background-color: #0d111a;
     border-bottom: 1px solid var(--border-color);
+    height: 50px;
 }
 
-.menu-btn {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 8px;
+.header-left-spacer {
+    width: 40px; 
 }
 
 .wallet-container {
@@ -49,33 +46,49 @@ body {
     align-items: center;
     background: #07090e;
     border: 1px solid var(--border-color);
-    padding: 4px 12px;
+    padding: 6px 14px;
     border-radius: 24px;
-    gap: 12px;
+    gap: 10px;
+    margin-left: -10px; 
 }
 
 .balance-badge {
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-size: 0.9rem;
+    gap: 6px;
+    font-size: 1rem;
     font-weight: 700;
+    color: #00e5ff;
 }
 
 .deposit-btn {
     background: var(--accent-blue);
     border: none;
     color: white;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
     font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.deposit-btn:active {
+    background: #154694;
 }
 
 .profile-avatar {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     background: var(--bg-card);
-    padding: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     border: 1px solid var(--border-color);
 }
@@ -287,7 +300,7 @@ body {
 .inv-item.rarity-rare { border-bottom-color: var(--rarity-rare); }
 .inv-item.rarity-epic { border-bottom-color: var(--rarity-epic); }
 
-/* НИЖНИЙ НАВИГАТОР (НЕОН И SVG) */
+/* НИЖНИЙ НАВИГАТОР */
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -325,7 +338,7 @@ body {
 }
 
 .nav-item.active {
-    color: #00e5ff; /* Неоновый голубой */
+    color: #00e5ff;
 }
 
 .nav-item.active .nav-svg {
