@@ -3,34 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RacoonGifts Casino</title>
+    <title>RacoonGifts</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 
-    <div id="app-screen" class="screen">
-        <header>
-            <div class="user-info">
-                <span class="avatar">🦝</span>
-                <span id="username">Игрок</span>
+    <header class="app-header">
+        <button class="menu-btn">☰</button>
+        <div class="wallet-container">
+            <div class="balance-badge token-blue">
+                <span class="icon">💎</span>
+                <span id="balance-stars">0.40</span>
             </div>
-            <div class="balance-container">
-                <span id="balance-display">12500</span> <span class="currency">🪙</span>
+            <div class="balance-badge token-gold">
+                <span class="icon">🪙</span>
+                <span id="balance-coins">12500</span>
             </div>
-        </header>
+            <button class="deposit-btn">+</button>
+        </div>
+        <div class="profile-avatar">
+            <span class="avatar-emoji">🦝</span>
+        </div>
+    </header>
 
-        <main class="casino-main">
-            <div class="slots-container">
-                <div class="slot-window" id="slot1">🎁</div>
-                <div class="slot-window" id="slot2">🎁</div>
-                <div class="slot-window" id="slot3">🎁</div>
+    <div class="content-wrapper">
+
+        <section id="tab-cases" class="tab-content">
+            <div class="live-feed">
+                <span class="live-indicator">● LIVE</span>
+                <div class="feed-items">
+                    <div class="feed-item win-cup">🏆</div>
+                    <div class="feed-item win-box">🎁</div>
+                    <div class="feed-item win-nft">⚡</div>
+                </div>
             </div>
 
-            <button id="spin-btn" class="btn-primary">Крутить за 500 🪙</button>
-            <p id="win-message" class="message"></p>
-        </main>
+            <div class="section-title">
+                <h3>Промо-кейсы</h3>
+                <span class="badge-count">2</span>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card green-case">
+                    <span class="case-counter">🎫 15</span>
+                    <div class="case-img">📦</div>
+                    <h4>DAILY</h4>
+                    <button class="btn-case-action">Бесплатно</button>
+                </div>
+                <div class="case-card orange-case">
+                    <span class="case-counter">🎫 11</span>
+                    <div class="case-img">📦</div>
+                    <h4>PROMO</h4>
+                    <button class="btn-case-action">Бесплатно</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-upgrade" class="tab-content hidden">
+            <div class="upgrade-container">
+                <div class="upgrade-circle">
+                    <span class="arrow-up">▲</span>
+                    <div class="chance-text">0%</div>
+                    <div class="chance-sub">ШАНС</div>
+                </div>
+                
+                <div class="upgrade-actions">
+                    <button class="btn-upgrade-main">Начать апгрейд</button>
+                </div>
+
+                <div class="slots-upgrade-grid">
+                    <div class="upgrade-slot-box">
+                        <div class="plus-icon">+</div>
+                        <p>Ваш предмет</p>
+                    </div>
+                    <div class="upgrade-slot-box">
+                        <div class="plus-icon">+</div>
+                        <p>Цель апгрейда</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-slots" class="tab-content hidden">
+            <div class="slots-machine">
+                <div class="slot-reel"><div class="slot-icon">💎</div><div class="slot-icon">🚀</div><div class="slot-icon">🍯</div></div>
+                <div class="slot-reel"><div class="slot-icon">🚀</div><div class="slot-icon">🍯</div><div class="slot-icon">💎</div></div>
+                <div class="slot-reel"><div class="slot-icon">🍯</div><div class="slot-icon">💎</div><div class="slot-icon">🚀</div></div>
+            </div>
+
+            <div class="bet-section">
+                <div class="bet-selector">
+                    <button class="bet-opt active">🪙 100</button>
+                    <button class="bet-opt">🪙 500</button>
+                    <button class="bet-opt">🪙 1000</button>
+                </div>
+                <button class="btn-spin-slots">Крутить</button>
+            </div>
+        </section>
+
+        <section id="tab-craft" class="tab-content hidden">
+            <div class="craft-container">
+                <div class="craft-area">
+                    <div class="craft-hex">⬡</div>
+                    <p class="craft-hint">Положите от 3 до 10 NFT подарков для крафта более редкого</p>
+                </div>
+                <div class="craft-grid">
+                    <div class="craft-slot-empty">+</div>
+                    <div class="craft-slot-empty">+</div>
+                    <div class="craft-slot-empty">+</div>
+                </div>
+                <button class="btn-spin-slots" style="background: var(--accent-blue);">Создать контракт</button>
+            </div>
+        </section>
+
+        <section id="tab-profile" class="tab-content hidden">
+            <div class="profile-header-card">
+                <div class="profile-main-info">
+                    <div class="profile-big-avatar">🦝</div>
+                    <div class="profile-name-block">
+                        <h3 id="prof-username">Racoon Owner</h3>
+                        <span class="user-id-badge">ID: 7777777</span>
+                    </div>
+                </div>
+                <div class="stats-mini-grid">
+                    <div class="stat-box"><h5>Кейсы</h5><p>248</p></div>
+                    <div class="stat-box"><h5>Апгрейды</h5><p>12/5</p></div>
+                    <div class="stat-box"><h5>Крафты</h5><p>14</p></div>
+                </div>
+            </div>
+
+            <div class="inventory-section">
+                <h4>Ваш инвентарь предметов</h4>
+                <div class="inventory-grid">
+                    <div class="inv-item rarity-rare">🎁 <span class="price">250🪙</span></div>
+                    <div class="inv-item rarity-epic">💎 <span class="price">1200🪙</span></div>
+                    <div class="inv-item rarity-common">🍒 <span class="price">15🪙</span></div>
+                </div>
+            </div>
+        </section>
+
     </div>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-tab="tab-cases">
+            <span class="nav-icon">📦</span>
+            <span class="nav-text">Кейсы</span>
+        </button>
+        <button class="nav-item" data-tab="tab-upgrade">
+            <span class="nav-icon">📈</span>
+            <span class="nav-text">Апгрейд</span>
+        </button>
+        <button class="nav-item" data-tab="tab-slots">
+            <span class="nav-icon">🎰</span>
+            <span class="nav-text">Слоты</span>
+        </button>
+        <button class="nav-item" data-tab="tab-craft">
+            <span class="nav-icon">🛠</span>
+            <span class="nav-text">Крафт</span>
+        </button>
+        <button class="nav-item" data-tab="tab-profile">
+            <span class="nav-icon">👤</span>
+            <span class="nav-text">Профиль</span>
+        </button>
+    </nav>
 
     <script src="app.js"></script>
 </body>
